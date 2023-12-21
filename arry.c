@@ -1,17 +1,28 @@
 #include<stdio.h>
+#include<stdlib.h>
 int main()
 {
-    int arr[100],i,counteven=0,countodd=0;
-    printf("enter the 25 number:");
-    for(i=0;i<25;i++)
-    {
-        scanf("%d",&arr[i]);
-        if(arr[i]%2==0)
-        counteven++;
-        else
-        countodd++;
-    }
-    printf("Theeven number=%d\n",counteven);
-    printf("the odd number =%d",countodd);
-    return 0;
+int i,n,large,small;
+int *a;
+printf("How many elements:");
+scanf("%d",&n);
+a=(int*)malloc(n*sizeof(int));
+printf("Enter the Array:");
+ 
+for(i=0;i<n;++i)
+
+scanf("%d",&a[i]);
+large=small=a[0];
+
+for(i=1;i<n;++i)
+{
+if(a[i]>large)
+large=a[i];
+if(a[i]<small)
+small=a[i];
+}
+printf("The largest element is %d",large);
+printf("\nThe smallest element is %d",small);
+ free(a);
+return 0;
 }
